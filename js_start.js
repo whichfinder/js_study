@@ -33,14 +33,15 @@ function fibo(val) {
 }
 
 function isSorted(mass) {
-	var maxval = Math.max(mass);
-	var minval = Math.min(mass);
-	for (i = 1; i < (mass.length-1); i++) {
-		if (mass[i] > maxval && mass[i] < minval && ) {
-			return false
-		} 
+	result_mass = []
+	for (i = 1;i < (mass.length); i++) {
+		if (mass[i] > mass[i-1]) {
+			console.log('sorted')
+		}
 		else {
-			return true
+			console.log(i)
+			console.log("unsorted")
+			break;
 		}
 	}
 }
