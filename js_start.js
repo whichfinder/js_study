@@ -77,3 +77,19 @@ function reverse(someString) {
 	result = result_arr.join('')
 	return result
 }
+
+function indexOf(mas, value){
+	var result;
+	for (index=0; index < mas.length; index++){
+		if (mas[index] == value) {
+			result = index;
+			break
+		}
+	}
+	if (result) {
+		return result
+	}
+	else {
+		console.log('not found')
+	}	
+}
