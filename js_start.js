@@ -7,20 +7,14 @@ function factorial(val) {
 	console.log(result)
 }
 
+
 function isPrime(val) {
-	for (i = 1; i < val; i++) {
-	if (val > 0 && val % 1 == 0 && val % val == 0 && val % Math.sqrt(val) != 0 && val % (Math.sqrt(val) - 1) != 0 && val % (Math.sqrt(val) + 1) != 0) {
-		console.log(val)
+	for (i = 2; i < Math.sqrt(val); i++) {
+		if (val % i == 0) {
+			return false;
+		}
 		return true
 	}
-	else if (val < 0) {
-		console.log('negative value')
-	}
-	else {
-		console.log(val)
-		return false
-	}
-}
 }
 
 
@@ -32,16 +26,12 @@ function fibo(val) {
 	console.log(result)
 }
 
+
 function isSorted(mass) {
-	result_mass = []
 	for (i = 1;i < (mass.length); i++) {
-		if (mass[i] > mass[i-1]) {
-			console.log('sorted')
+		if (mass[i] < mass[i-1]) {
+			return false;
 		}
-		else {
-			console.log(i)
-			console.log("unsorted")
-			break;
-		}
+		return true;
 	}
 }
