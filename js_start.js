@@ -93,3 +93,18 @@ function indexOf(mas, value){
 		console.log('not found')
 	}	
 }
+
+
+function isPal(someStr) {
+	var text = someStr.toLowerCase()
+	text = text.split('')
+	text = text.filter(i => i.charCodeAt() != 32)
+	if (text == text.reverse()) {
+		return true
+	}
+	else {
+		return false
+	}
+
+}
+
