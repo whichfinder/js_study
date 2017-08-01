@@ -35,3 +35,45 @@ function isSorted(mass) {
 		return true;
 	}
 }
+
+
+function filter(mass, val, condition) {
+	result = []
+	if (condition == 'less') {
+		console.log('less condition')
+		for (i = 0; i < mass.length; i++) {
+			if (mass[i] < val) {
+				result.push(mass[i])
+			}
+		}
+	}
+	else if (condition == 'more'){
+		console.log('more condition')
+		for (i = 0; i < mass.length; i++) {
+			if (mass[i] > val) {
+				result.push(mass[i])
+			}
+		}
+	}
+	return result
+}
+
+
+function reduce(mass){
+	var result = 0;
+	for (i = 0; i < mass.length; i++) {
+		result = result + mass[i]
+	}
+	return result
+}
+
+function reverse(someString) {
+	var result;
+	mas = someString.split('')
+	result_arr = []
+	for (m = mas.length; m >= 0; m--) {
+		result_arr.push(mas[m])
+	}
+	result = result_arr.join('')
+	return result
+}
