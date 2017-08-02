@@ -116,8 +116,11 @@ function missing(mas) {
 		else if ((m[i+1] - m[i]) > (m[i+2] - m[i+1])){
 			return m[i]+1
 		}
-		else {
+		else if ((m[i+1] - m[i]) < (m[i+2] - m[i+1])){
 			return m[i+1]+1
+		}
+		else {
+			continue;
 		}
 	}
 }
