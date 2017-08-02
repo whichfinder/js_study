@@ -100,6 +100,8 @@ function isPal(someStr) {
 	text = text.split('')
 	text = text.filter(i => i.charCodeAt() != 32)
 	if (text == text.reverse()) {
+		console.log(text)
+		console.log(text.reverse)
 		return true
 	}
 	else {
@@ -108,3 +110,14 @@ function isPal(someStr) {
 
 }
 
+function isPal1(someStr) {
+	var text = someStr.toLowerCase()
+	text = text.split('')
+	text = text.filter(i => i.charCodeAt() != 32)
+	if (text != text.reverse()) {
+		console.log(text)
+		console.log(text.reverse)
+		return false
+	}
+	return true;
+}
