@@ -97,26 +97,11 @@ function indexOf(mas, value){
 
 function isPal(someStr) {
 	var text = someStr.toLowerCase()
-	text = text.split('')
-	text = text.filter(i => i.charCodeAt() != 32)
-	if (text == text.reverse()) {
+	text = text.split('')  
+	text = text.filter(i => i.charCodeAt() != 32)  // remove all spaces
+	if (text.join() != text.reverse().join()) {
 		console.log(text)
-		console.log(text.reverse)
-		return true
-	}
-	else {
-		return false
-	}
-
-}
-
-function isPal1(someStr) {
-	var text = someStr.toLowerCase()
-	text = text.split('')
-	text = text.filter(i => i.charCodeAt() != 32)
-	if (text != text.reverse()) {
-		console.log(text)
-		console.log(text.reverse)
+		console.log(text.reverse().join())
 		return false
 	}
 	return true;
