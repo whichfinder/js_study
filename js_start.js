@@ -124,3 +124,29 @@ function missing(mas) {
 		}
 	}
 }
+
+
+function isBalanced(someStr) {
+	var res1 = 0;
+	var res2 = 0;
+	var mas = str.split('');
+	for (m = 0; m <= mas.length; m++) {
+		if (mas[m] == '{') {
+			res1++;
+			console.log('count { ' + res1)
+			continue;
+		}
+		else if (mas[m] == '}') {
+			res2++;
+			console.log('count } ' + res2);
+			continue;
+		}
+		else{
+			continue;
+		}
+	if (res1 == res2) {
+		return true;
+	}
+	return false;
+	}
+}
