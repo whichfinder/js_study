@@ -114,12 +114,10 @@ function missing(mas) {
 	    	continue;
 		}
 		else if ((m[i+1] - m[i]) > (m[i+2] - m[i+1])){
-			console.log('v1 ' + m[i] + ' ' + m[i+1] + ' ' + m[i+2])
-			return m[i];
+			return m[i]+1
 		}
 		else {
-			console.log('v2 ' + m[i] + ' ' + m[i+1] + ' ' + m[i+2])
-			return m[i+1];
+			return m[i+1]+1
 		}
 	}
 }
