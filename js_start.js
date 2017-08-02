@@ -106,3 +106,20 @@ function isPal(someStr) {
 	}
 	return true;
 }
+
+function missing(mas) {
+	m = mas.sort()
+	for (i = 0; i < m.length; i++) {
+		if ((m[i+1] - m[i]) == (m[i+2] - m[i+1])){
+	    	continue;
+		}
+		else if ((m[i+1] - m[i]) > (m[i+2] - m[i+1])){
+			console.log('v1 ' + m[i] + ' ' + m[i+1] + ' ' + m[i+2])
+			return m[i];
+		}
+		else {
+			console.log('v2 ' + m[i] + ' ' + m[i+1] + ' ' + m[i+2])
+			return m[i+1];
+		}
+	}
+}
