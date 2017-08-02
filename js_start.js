@@ -1,3 +1,4 @@
+
 function factorial(val) {
 	result = 1
 	while (val > 0) {
@@ -129,7 +130,7 @@ function missing(mas) {
 function isBalanced(someStr) {
 	var res1 = 0;
 	var res2 = 0;
-	var mas = str.split('');
+	var mas = someStr.split('');
 	for (m = 0; m <= mas.length; m++) {
 		if (mas[m] == '{') {
 			res1++;
@@ -143,10 +144,13 @@ function isBalanced(someStr) {
 		}
 		else{
 			continue;
-		}
+		};
+
+	};
 	if (res1 == res2) {
 		return true;
-	}
-	return false;
-	}
-}
+	} else {
+		return false;
+	};
+
+};
