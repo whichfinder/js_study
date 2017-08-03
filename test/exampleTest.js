@@ -5,7 +5,7 @@ var chai = require('chai');
 
 fact = js_start.__get__('factorial')
 
-describe ("function factorial", function() {
+describe("function factorial", function() {
 
 	it("return expected result for value", function() {
 		var result = fact(5);

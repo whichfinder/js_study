@@ -1,4 +1,3 @@
-
 function factorial(val) {
 	result = 1
 	while (val > 0) {
@@ -21,16 +20,16 @@ function isPrime(val) {
 
 function fibo(val) {
 	var result = [0, 1]
-	for (i = 2; i < val; i++){
-		result.push(result[i-1] + result[i-2])
+	for (i = 2; i < val; i++) {
+		result.push(result[i - 1] + result[i - 2])
 	}
 	console.log(result)
 }
 
 
 function isSorted(mass) {
-	for (i = 1;i < (mass.length); i++) {
-		if (mass[i] < mass[i-1]) {
+	for (i = 1; i < (mass.length); i++) {
+		if (mass[i] < mass[i - 1]) {
 			return false;
 		}
 		return true;
@@ -38,35 +37,28 @@ function isSorted(mass) {
 }
 
 
-function filter(mass, val, condition) {
-	result = []
-	if (condition == 'less') {
-		console.log('less condition')
-		for (i = 0; i < mass.length; i++) {
-			if (mass[i] < val) {
-				result.push(mass[i])
-			}
-		}
-	}
-	else if (condition == 'more'){
-		console.log('more condition')
-		for (i = 0; i < mass.length; i++) {
-			if (mass[i] > val) {
-				result.push(mass[i])
-			}
-		}
-	}
+function filterWithCallBack(mass, val, functionCallback) {
+	functionCallback(mass, val);
 	return result
+}
+function checkVals(mass, val) {
+	result = []
+	for (i = 0; i < mass.length; i++) {
+		if (mass[i] < val) {
+			result.push(mass[i])
+		}
+	}
 }
 
 
-function reduce(mass){
+function reduce(mass) {
 	var result = 0;
 	for (i = 0; i < mass.length; i++) {
 		result = result + mass[i]
 	}
 	return result
 }
+
 
 function reverse(someString) {
 	var result;
@@ -79,9 +71,10 @@ function reverse(someString) {
 	return result
 }
 
-function indexOf(mas, value){
+
+function indexOf(mas, value) {
 	var result;
-	for (index=0; index < mas.length; index++){
+	for (index = 0; index < mas.length; index++) {
 		if (mas[index] == value) {
 			result = index;
 			break
@@ -89,17 +82,16 @@ function indexOf(mas, value){
 	}
 	if (result) {
 		return result
-	}
-	else {
+	} else {
 		console.log('not found')
-	}	
+	}
 }
 
 
 function isPal(someStr) {
 	var text = someStr.toLowerCase()
-	text = text.split('')  
-	text = text.filter(i => i.charCodeAt() != 32)  // remove all spaces
+	text = text.split('')
+	text = text.filter(i => i.charCodeAt() != 32) // remove all spaces
 	if (text.join() != text.reverse().join()) {
 		console.log(text)
 		console.log(text.reverse().join())
@@ -108,19 +100,17 @@ function isPal(someStr) {
 	return true;
 }
 
+
 function missing(mas) {
 	m = mas.sort()
 	for (i = 0; i < m.length; i++) {
-		if ((m[i+1] - m[i]) == (m[i+2] - m[i+1])){
-	    	continue;
-		}
-		else if ((m[i+1] - m[i]) > (m[i+2] - m[i+1])){
-			return m[i]+1
-		}
-		else if ((m[i+1] - m[i]) < (m[i+2] - m[i+1])){
-			return m[i+1]+1
-		}
-		else {
+		if ((m[i + 1] - m[i]) == (m[i + 2] - m[i + 1])) {
+			continue;
+		} else if ((m[i + 1] - m[i]) > (m[i + 2] - m[i + 1])) {
+			return m[i] + 1
+		} else if ((m[i + 1] - m[i]) < (m[i + 2] - m[i + 1])) {
+			return m[i + 1] + 1
+		} else {
 			continue;
 		}
 	}
@@ -136,13 +126,11 @@ function isBalanced(someStr) {
 			res1++;
 			console.log('count { ' + res1)
 			continue;
-		}
-		else if (mas[m] == '}') {
+		} else if (mas[m] == '}') {
 			res2++;
 			console.log('count } ' + res2);
 			continue;
-		}
-		else{
+		} else {
 			continue;
 		};
 
