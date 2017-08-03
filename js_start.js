@@ -1,10 +1,10 @@
 function factorial(val) {
-	result = 1
+	result = 1;
 	while (val > 0) {
-		result = result * val
-		val--
+		result = result * val;
+		val--;
 	}
-	console.log(result)
+	console.log(result);
 }
 
 
@@ -13,17 +13,17 @@ function isPrime(val) {
 		if (val % i == 0) {
 			return false;
 		}
-		return true
+		return true;
 	}
 }
 
 
 function fibo(val) {
-	var result = [0, 1]
+	var result = [0, 1];
 	for (i = 2; i < val; i++) {
-		result.push(result[i - 1] + result[i - 2])
+		result.push(result[i - 1] + result[i - 2]);
 	}
-	console.log(result)
+	console.log(result);
 }
 
 
@@ -37,15 +37,15 @@ function isSorted(mass) {
 }
 
 
-function filterWithCallBack(mass, val, functionCallback) {
-	functionCallback(mass, val);
+function filterWithCallBack(mass, val, checkValsCallback) {
+	checkValsCallback(mass, val);
 	return result
 }
 function checkVals(mass, val) {
-	result = []
+	result = [];
 	for (i = 0; i < mass.length; i++) {
 		if (mass[i] < val) {
-			result.push(mass[i])
+			result.push(mass[i]);
 		}
 	}
 }
@@ -54,21 +54,21 @@ function checkVals(mass, val) {
 function reduce(mass) {
 	var result = 0;
 	for (i = 0; i < mass.length; i++) {
-		result = result + mass[i]
+		result = result + mass[i];
 	}
-	return result
+	return result;
 }
 
 
 function reverse(someString) {
 	var result;
-	mas = someString.split('')
-	result_arr = []
+	mas = someString.split('');
+	result_arr = [];
 	for (m = mas.length; m >= 0; m--) {
-		result_arr.push(mas[m])
+		result_arr.push(mas[m]);
 	}
-	result = result_arr.join('')
-	return result
+	result = result_arr.join('');
+	return result;
 }
 
 
@@ -77,25 +77,25 @@ function indexOf(mas, value) {
 	for (index = 0; index < mas.length; index++) {
 		if (mas[index] == value) {
 			result = index;
-			break
+			break;
 		}
 	}
 	if (result) {
-		return result
+		return result;
 	} else {
-		console.log('not found')
+		console.log('not found');
 	}
 }
 
 
 function isPal(someStr) {
 	var text = someStr.toLowerCase()
-	text = text.split('')
+	text = text.split('');
 	text = text.filter(i => i.charCodeAt() != 32) // remove all spaces
 	if (text.join() != text.reverse().join()) {
-		console.log(text)
-		console.log(text.reverse().join())
-		return false
+		console.log(text);
+		console.log(text.reverse().join());
+		return false;
 	}
 	return true;
 }
@@ -107,9 +107,9 @@ function missing(mas) {
 		if ((m[i + 1] - m[i]) == (m[i + 2] - m[i + 1])) {
 			continue;
 		} else if ((m[i + 1] - m[i]) > (m[i + 2] - m[i + 1])) {
-			return m[i] + 1
+			return m[i] + 1;
 		} else if ((m[i + 1] - m[i]) < (m[i + 2] - m[i + 1])) {
-			return m[i + 1] + 1
+			return m[i + 1] + 1;
 		} else {
 			continue;
 		}
