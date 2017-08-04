@@ -1,16 +1,20 @@
 var test = require('unit.js');
 var js_start = require('../js_start.js');
-var rewire = require('rewire');
-var chai = require('chai');
-
-fact = js_start.__get__('factorial')
+var assert = require('assert')
 
 describe("function factorial", function() {
 
 	it("return expected result for value", function() {
-		var result = fact(5);
+		
+		assert.equal(120, js_start._test.factorial(5));
+	});
 
-		expect(result).toEqual(120);
+	it("return false if answer is wrong", function() {
+		assert.notEqual(123, js_start._test.factorial(5));
+	});
+
+	it("check passed param", function() {
+		assert.fail(js_start._test.factorial(-1), -1, 'value should be number');
 	});
 
 });
