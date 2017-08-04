@@ -1,10 +1,16 @@
 function factorial(val) {
 	result = 1;
+	if (val < 0) {
+		throw TypeError('value should be > 0');
+	}
+	else if (typeof(val) != 'number') {
+		throw TypeError('value should be number');	
+	}
 	while (val > 0) {
 		result = result * val;
 		val--;
 	}
-	console.log(result);
+	return result;
 }
 
 
@@ -149,3 +155,9 @@ function isBalanced(someStr) {
 	};
 
 };
+
+
+exports._test = {
+    factorial: factorial,
+    isBalanced: isBalanced
+}
