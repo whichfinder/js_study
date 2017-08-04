@@ -52,9 +52,16 @@ function checkVals(mass, val) {
 
 
 function reduce(mass) {
-	var result = 0;
 	for (i = 0; i < mass.length; i++) {
 		result = result + mass[i];
+	}
+	return result;
+}
+
+function reduce(mass, func) {
+	var result = 0;
+	for (i = 0; i < mass.length; i++) {
+		
 	}
 	return result;
 }
