@@ -77,8 +77,8 @@ function reduce(mass) {
 function reduceWithFunc(mass, func) {
 	var result = 0;
 	for (i = 0; i <= mass.length; i++){
-			result = result + func(mass[i], mass[i+1]);
-			console.log(result);
+			result = result + func(mass[i], result);
+			mass[i] = result;
 			i++;
 		}
 	return result;
