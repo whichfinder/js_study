@@ -56,6 +56,16 @@ function checkVals(mass, val) {
 	}
 }
 
+function filterWithFunc(mass, func) {
+	result = []
+	for (i = 0; i < mass.length; i++) {
+		if (func(mass[i])) {
+			result.push(mass[i]);
+		}
+	}
+	return result;
+}
+
 
 function reduce(mass) {
 	for (i = 0; i < mass.length; i++) {
@@ -64,11 +74,16 @@ function reduce(mass) {
 	return result;
 }
 
-function reduce(mass, func) {
+function reduceWithFunc(mass, func) {
 	var result = 0;
-	for (i = 0; i < mass.length; i++) {
-		result = func(result + mass[i])
-		console.log(result);
+	for (i = 0; i <=mass.length; i++){
+		while (i <= mass.length) {
+			result = func(mass[i], mass[i+1]);
+			console.log(result);
+		}
+		if (i > mass.length) {
+			break;
+		}
 	}
 	return result;
 }
