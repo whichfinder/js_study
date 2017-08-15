@@ -166,6 +166,21 @@ function isBalanced(someStr) {
 
 };
 
+function bubbleSort(array) {
+	var param = true;
+	while (param) {
+		param = false;
+		for (i = 0; i <= array.length-1; i++ ) {
+			if (array[i] > array[i+1]) {
+				[array[i],array[i+1]] = [array[i+1],array[i]]
+				param = true;
+			}
+		}
+
+	}
+	return array
+}
+
 
 exports._test = {
     factorial: factorial,
