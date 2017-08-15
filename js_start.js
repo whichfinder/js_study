@@ -181,6 +181,43 @@ function bubbleSort(array) {
 	return array
 }
 
+function mergeSort(array) {
+	if (array.length > 1) {
+		var divider = Math.floor(array.length/2)
+		var leftArray = array.slice(0, divider)
+		var rightArray = array.slice(divider)
+
+		mergeSort(leftArray)
+		mergeSort(rightArray)
+
+		var i=j=k=0;
+
+		while ((i < leftArray.length) && (j < rightArray.length)) {
+			if (leftArray[i] < rightArray[j]) {
+				array[k] = leftArray[i];
+				i++;
+			}
+			else {
+				array[k] = rightArray[j];
+				j++;
+			}
+			k++;
+
+		while (i < leftArray.length) {
+			array[k] = leftArray[i];
+			i++;
+			k++;
+		}
+
+		while (j < rightArray.length) {
+			array[k] = rightArray[j];
+			j++;
+			k++;
+		}
+		} 
+	}
+	console.log(array)
+}
 
 exports._test = {
     factorial: factorial,
