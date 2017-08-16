@@ -172,7 +172,7 @@ function bubbleSort(array) {
 		param = false;
 		for (i = 0; i <= array.length-1; i++ ) {
 			if (array[i] > array[i+1]) {
-				[array[i],array[i+1]] = [array[i+1],array[i]]
+				[array[i],array[i+1]] = [array[i+1],array[i]];
 				param = true;
 			}
 		}
@@ -180,6 +180,33 @@ function bubbleSort(array) {
 	}
 	return array
 }
+
+var a = [1, 3, 5];
+var b = [2, 4, 6];
+function patialMege(arr1, arr2) {
+	result = [];
+	i = j = 0;
+	
+	while ((i < arr1.length) && (j < arr2.length)){
+			if (arr1[i] < arr2[j]) {
+				result.push(arr1[i]);
+				i++;
+			}
+			else {
+				result.push(arr2[j]);
+				j++;
+			}
+    }
+
+	if (result.indexOf(arr1[i]) == -1) { 
+		result.push(arr1[i]);
+		}
+	else if(result.indexOf(arr2[j]) == -1) {
+		result.push(arr2[j]);
+	}
+	return result;
+}
+
 
 function mergeSort(array) {
 	if (array.length > 1) {
@@ -216,7 +243,6 @@ function mergeSort(array) {
 		}
 		} 
 	}
-	console.log(array)
 }
 
 exports._test = {
