@@ -7,9 +7,9 @@
 <h1>Yo</h1>
 <script>
 	
-	var a = [1, 3, 5];
+var a = [1, 3, 5];
 var b = [2, 4, 6];
-function patialMege(arr1, arr2) {
+function partialMerge(arr1, arr2) {
 	result = [];
 	i = j = 0;
 	
@@ -23,17 +23,18 @@ function patialMege(arr1, arr2) {
 				j++;
 			}
     }
-
-	if (result.indexOf(arr1[i]) == -1) { 
+    while (i < arr1.length) { 
 		result.push(arr1[i]);
-		}
-	else if(result.indexOf(arr2[j]) == -1) {
+		i++;
+	}
+	while (j < arr2.length) {
 		result.push(arr2[j]);
+		j++;
 	}
 	return result;
 }
 
-patialMege(a,b);
+partialMerge(a,b);
 
 </script>
 

@@ -183,7 +183,7 @@ function bubbleSort(array) {
 
 var a = [1, 3, 5];
 var b = [2, 4, 6];
-function patialMege(arr1, arr2) {
+function partialMerge(arr1, arr2) {
 	result = [];
 	i = j = 0;
 	
@@ -197,55 +197,67 @@ function patialMege(arr1, arr2) {
 				j++;
 			}
     }
-
-	if (result.indexOf(arr1[i]) == -1) { 
+    while (i < arr1.length) { 
 		result.push(arr1[i]);
-		}
-	else if(result.indexOf(arr2[j]) == -1) {
+		i++;
+	}
+	while (j < arr2.length) {
 		result.push(arr2[j]);
+		j++;
 	}
 	return result;
 }
 
 
-function mergeSort(array) {
-	if (array.length > 1) {
-		var divider = Math.floor(array.length/2)
-		var leftArray = array.slice(0, divider)
-		var rightArray = array.slice(divider)
-
-		mergeSort(leftArray)
-		mergeSort(rightArray)
-
-		var i=j=k=0;
-
-		while ((i < leftArray.length) && (j < rightArray.length)) {
-			if (leftArray[i] < rightArray[j]) {
-				array[k] = leftArray[i];
-				i++;
-			}
-			else {
-				array[k] = rightArray[j];
-				j++;
-			}
-			k++;
-
-		while (i < leftArray.length) {
-			array[k] = leftArray[i];
-			i++;
-			k++;
-		}
-
-		while (j < rightArray.length) {
-			array[k] = rightArray[j];
-			j++;
-			k++;
-		}
-		} 
-	}
-}
-
 exports._test = {
     factorial: factorial,
     isBalanced: isBalanced
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// function mergeSort(array) {
+// 	if (array.length > 1) {
+// 		var divider = Math.floor(array.length/2)
+// 		var leftArray = array.slice(0, divider)
+// 		var rightArray = array.slice(divider)
+
+// 		mergeSort(leftArray)
+// 		mergeSort(rightArray)
+
+// 		var i=j=k=0;
+
+// 		while ((i < leftArray.length) && (j < rightArray.length)) {
+// 			if (leftArray[i] < rightArray[j]) {
+// 				array[k] = leftArray[i];
+// 				i++;
+// 			}
+// 			else {
+// 				array[k] = rightArray[j];
+// 				j++;
+// 			}
+// 			k++;
+
+// 		while (i < leftArray.length) {
+// 			array[k] = leftArray[i];
+// 			i++;
+// 			k++;
+// 		}
+
+// 		while (j < rightArray.length) {
+// 			array[k] = rightArray[j];
+// 			j++;
+// 			k++;
+// 		}
+// 		} 
+// 	}
+// }
