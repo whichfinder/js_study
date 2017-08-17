@@ -6,37 +6,16 @@
 <body>
 <h1>Yo</h1>
 <script>
-	
-var a = [1, 3, 5];
-var b = [2, 4, 6];
-function partialMerge(arr1, arr2) {
-	result = [];
-	i = j = 0;
-	
-	while ((i < arr1.length) && (j < arr2.length)){
-			if (arr1[i] < arr2[j]) {
-				result.push(arr1[i]);
-				i++;
-			}
-			else {
-				result.push(arr2[j]);
-				j++;
-			}
-    }
-    while (i < arr1.length) { 
-		result.push(arr1[i]);
-		i++;
+function fiboRecursive(val) {
+	if (val > 2) {
+		return fiboRecursive(val-2) + fiboRecursive(val - 1);
 	}
-	while (j < arr2.length) {
-		result.push(arr2[j]);
-		j++;
+	else {
+		return 1;
 	}
-	return result;
 }
 
-partialMerge(a,b);
-
+fiboRecursive(7)
 </script>
-
 </body>
 </html>

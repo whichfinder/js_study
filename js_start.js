@@ -14,6 +14,23 @@ function factorial(val) {
 }
 
 
+function factorialRecursive(val) {
+	result = 1;
+	if (val < 0) {
+		throw TypeError('value should be > 0');
+	}
+	else if (typeof(val) != 'number') {
+		throw TypeError('value should be number');	
+	}
+	else if (val == 1){
+		return 1;
+	}
+	else if (val >= 1){
+		return val*factorial(val-1);
+	} 
+}
+
+
 function isPrime(val) {
 	for (i = 2; i < Math.sqrt(val); i++) {
 		if (val % i == 0) {
@@ -30,6 +47,15 @@ function fibo(val) {
 		result.push(result[i - 1] + result[i - 2]);
 	}
 	console.log(result);
+}
+
+function fiboRecursive(val) {
+	if (val > 2) {
+		return fiboRecursive(val-2) + fiboRecursive(val - 1);
+	}
+	else {
+		return 1;
+	}
 }
 
 
