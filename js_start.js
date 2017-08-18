@@ -234,6 +234,47 @@ function partialMerge(arr1, arr2) {
 	return result;
 }
 
+var a = [34, 203, 3, 746, 200, 984, 198, 764, 9]
+function mergeSort(array) {
+
+	if (array.length > 1) {
+		var divider = Math.floor(array.length / 2);
+		var leftArr = array.slice(0, divider);
+		var rightArr = array.slice(divider, array.length);
+
+	} 
+	else { return array;}
+
+	return merge(mergeSort(leftArr), mergeSort(rightArr));
+
+		function merge(arr1, arr2){
+			result = [];
+			i = j = 0;
+			
+			while ((i < arr1.length) && (j < arr2.length)){
+					if (arr1[i] < arr2[j]) {
+						result.push(arr1[i]);
+						i++;
+					}
+					else {
+						result.push(arr2[j]);
+						j++;
+					}
+		    }
+		    while (i < arr1.length) { 
+				result.push(arr1[i]);
+				i++;
+			}
+			while (j < arr2.length) {
+				result.push(arr2[j]);
+				j++;
+			}
+			return result;
+			}
+
+}
+
+
 
 exports._test = {
     factorial: factorial,
