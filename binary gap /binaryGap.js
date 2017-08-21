@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<script src="js_start.js"></script>
-	<script src="benchmark.js"></script>
-	<title></title>
-</head>
-<body>
-<h1>Yo</h1>
-<script>
 function solution(N) {
     var maxGap = 0;
     if (typeof(N) == "number") {
@@ -25,10 +15,7 @@ function solution(N) {
                 }
             }   
         }
+    console.log(maxGap)    
     return maxGap;  
     }
 }
-solution(1041)
-</script>
-</body>
-</html>
