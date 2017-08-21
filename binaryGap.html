@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="js_start.js"></script>
+	<script src="benchmark.js"></script>
+	<title></title>
+</head>
+<body>
+<h1>Yo</h1>
+<script>
+function solution(N) {
+    var maxGap = 0;
+    if (typeof(N) == "number") {
+        var binValue = parseInt(N, 10).toString(2);
+        var valueArray = Array.from(binValue.toString())
+        for (i = 0; i < valueArray.length; i++) {
+            if (valueArray[i] == 0) {
+                var longestGap = 0;
+                while (valueArray[i] == 0) {
+                    longestGap++;
+                    i++;
+                }
+                if (longestGap > maxGap) {
+                    maxGap = longestGap;
+                }
+            }   
+        }
+    return maxGap;  
+    }
+}
+solution(1041)
+</script>
+</body>
+</html>
