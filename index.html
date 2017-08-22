@@ -8,8 +8,20 @@
 <body>
 <h1>Yo</h1>
 <script>
+function solution(A, K) {
+    var k = 1;
+    var i = 0;
+    if (A.length < 2) {return A;}
 
-
+    while (k != K){
+        val = A.splice(0, 1);
+        A.push(parseInt(val))
+        k++;
+        i++;
+    }
+    return A;
+}
+solution([3, 8, 9, 7, 6], 3)
 </script>
 </body>
 </html>
