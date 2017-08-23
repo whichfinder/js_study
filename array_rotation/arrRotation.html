@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="arrRotation.js"></script>
+	<title></title>
+</head>
+<body>
+<input type="input" value="" id="input1">
+<input type="input" value="" id="input2">
+<input type="button" value="calculate" onclick="solution(getElementValue(), getRotationCount())">
+<script>
+function getElementValue(){
+    var elem = document.getElementById('input1').value;
+    return elem;
+}
+function getRotationCount(){
+    var elem = document.getElementById('input2').value;
+    return elem;
+}
+</script>
+</body>
+</html>
