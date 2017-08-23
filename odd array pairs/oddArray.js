@@ -2,16 +2,20 @@ function solution(A) {
 	A = JSON.parse(A)
 	var result = [];
 	var a = {};
-	for (i = 1; i < A.length; i++) {
-			a['uniq'] = A[0];
+	param = true;
+	while (param) {
+			a['uniq'] = parseInt(A.splice(0,1));
 	    	if (A.includes(a['uniq'])) {
 	    		A.splice(A.indexOf(a['uniq']),1);
-	    		A.splice(A[a['uniq']],1);
-	    		a['uniq'] = A[0];
+	    		// A.splice(A[a['uniq']],1);
+	    		// a['uniq'] = parseInt(A.splice(0,1));
+	    		param = true;
 	        }
 	        else {
 	        	result.push(a['uniq'])
+	        	param = false;
 	        }
-		return result;
+		
 }
+return result;
 }
